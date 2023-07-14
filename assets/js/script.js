@@ -82,7 +82,7 @@ function getLatLon() {
 // function to get live weather data
 function getWeatherData() {
   var apiKey = "049be9d108315522a49e73bb36ea79dc";
-  var newRequestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  var newRequestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   fetch(newRequestUrl)
     .then(function (response) {
