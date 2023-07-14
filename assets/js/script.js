@@ -1,7 +1,7 @@
 /******************************************/
 /* External dependencies */
 /******************************************/
-var dateDisplayEl = document.getElementById(current - date);
+var dateDisplayEl = document.getElementById("current-date");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -9,7 +9,12 @@ var dateDisplayEl = document.getElementById(current - date);
 /******************************************/
 /* Function and class declarations */
 /******************************************/
-
+// Function to display the current date onto the document
+function dateDisplay() {
+  var rightNow = moment().format("dddd, MMMM Do YYYY");
+  console.log(rightNow);
+  dateDisplayEl.textContent = rightNow;
+}
 /******************************************/
 /* Event listeners */
 /******************************************/
@@ -21,7 +26,8 @@ var dateDisplayEl = document.getElementById(current - date);
 /******************************************/
 /* Initialization code */
 /******************************************/
-
+// setInterval to update the date every second
+setInterval(dateDisplay, 1000);
 /******************************************/
 /* Main logic */
 /******************************************/
