@@ -92,6 +92,7 @@ function getLatLon() {
 
       //   Calling getWeatherData function once getLatLon function has retrieved data
       getWeatherData();
+      cardDateDisplay();
     });
 }
 
