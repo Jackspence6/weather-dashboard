@@ -13,6 +13,8 @@ var searchBtnEl = document.getElementById("search-btn");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
+var latitude;
+var longitude;
 
 /******************************************/
 /* Function and class declarations */
@@ -67,17 +69,38 @@ function getLatLon() {
 
     .then(function (data) {
       console.log(data);
-      var latitude = data[0].lat;
-      var longitude = data[0].lon;
+      latitude = data[0].lat;
+      longitude = data[0].lon;
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
     });
 }
 
+// function to get live weather data
+function getWeatherData() {
+  var apiKey = "049be9d108315522a49e73bb36ea79dc";
+  var newRequestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+  fetch(newRequestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+    });
+}
+
+// Function to execute both functions together
+function eventListener() {
+  getLatLon();
+  getWeatherData();
+}
+
 /******************************************/
 /* Event listeners */
 /******************************************/
-searchBtnEl.addEventListener("click", getLatLon);
+searchBtnEl.addEventListener("click", eventListener);
 /******************************************/
 /* Document manipulation */
 /******************************************/
