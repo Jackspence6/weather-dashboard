@@ -8,6 +8,8 @@ var day2DateEl = document.getElementById("day2");
 var day3DateEl = document.getElementById("day3");
 var day4DateEl = document.getElementById("day4");
 var day5DateEl = document.getElementById("day5");
+var searchBarEl = document.getElementById("search-bar");
+var searchBtnEl = document.getElementById("search-btn");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -51,10 +53,31 @@ function cardDateDisplay(Event) {
   day4DateEl.textContent = day4;
   day5DateEl.textContent = day5;
 }
+
+// function to city Latitude & Longitude
+function getLatLon() {
+  var city = searchBarEl.value;
+  var apiKey = "049be9d108315522a49e73bb36ea79dc";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+      var latitude = data[0].lat;
+      var longitude = data[0].lon;
+      console.log("Latitude:", latitude);
+      console.log("Longitude:", longitude);
+    });
+}
+
 /******************************************/
 /* Event listeners */
 /******************************************/
-
+searchBtnEl.addEventListener("click", getLatLon);
 /******************************************/
 /* Document manipulation */
 /******************************************/
