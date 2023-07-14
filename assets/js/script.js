@@ -13,8 +13,15 @@ var searchBtnEl = document.getElementById("search-btn");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
+// Location variables
 var latitude;
 var longitude;
+
+// Todays Weather variables
+var todayTemp;
+var todayWind;
+var todayHumidity;
+var todayUvIndex;
 
 /******************************************/
 /* Function and class declarations */
