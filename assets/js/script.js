@@ -98,6 +98,7 @@ function getLatLon() {
       //   Calling getWeatherData function once getLatLon function has retrieved data
       getWeatherData();
       cardDateDisplay();
+      resetSearchBar();
     });
 }
 
@@ -135,6 +136,12 @@ function displayWeatherData() {
   todayWeatherConditionsEl.textContent = todayWeatherConditions;
   cityNameEl.textContent = city;
 }
+
+// Function to reset the search bar
+function resetSearchBar() {
+  searchBarEl.value = "";
+}
+
 /******************************************/
 /* Event listeners */
 /******************************************/
