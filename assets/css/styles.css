@@ -11,11 +11,11 @@
 /******************************************/
 header {
   display: grid;
-  background: linear-gradient(to bottom, #0000ff 0%, #00ffff 100%);
+  background: black;
   height: 10rem;
   text-align: center;
   align-items: center;
-  color: black;
+  color: white;
   font-family: monospace;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -67,6 +67,7 @@ h2 {
 .current-weather-row {
   margin-bottom: 4rem;
   border: solid 2px black;
+  border-radius: 10px;
 }
 
 .five-day-forecast {
@@ -76,6 +77,8 @@ h2 {
 .day {
   border: solid 2px black;
   background-color: #375164;
+  padding: 0%;
+  border-radius: 5px;
 }
 
 .day-header {
@@ -93,6 +96,18 @@ h2 {
   font-weight: 500;
 }
 
+.card-header {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.card {
+  padding: 0%;
+  border-radius: 10px;
+}
 /******************************************/
 /* ID Selectors */
 /******************************************/
