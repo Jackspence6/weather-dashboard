@@ -23,6 +23,31 @@ header {
 /******************************************/
 /* Class Selectors */
 /******************************************/
+.card-text {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-text li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  padding-bottom: 0;
+  height: 100%;
+}
+
+.city-search {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 /******************************************/
 /* ID Selectors */
