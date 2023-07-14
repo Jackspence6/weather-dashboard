@@ -73,6 +73,9 @@ function getLatLon() {
       longitude = data[0].lon;
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
+
+      //   Calling getWeatherData function once getLatLon function has retrieved data
+      getWeatherData();
     });
 }
 
@@ -91,16 +94,10 @@ function getWeatherData() {
     });
 }
 
-// Function to execute both functions together
-function eventListener() {
-  getLatLon();
-  getWeatherData();
-}
-
 /******************************************/
 /* Event listeners */
 /******************************************/
-searchBtnEl.addEventListener("click", eventListener);
+searchBtnEl.addEventListener("click", getLatLon);
 /******************************************/
 /* Document manipulation */
 /******************************************/
