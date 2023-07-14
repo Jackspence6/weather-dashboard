@@ -1,6 +1,8 @@
 /******************************************/
 /* External dependencies */
 /******************************************/
+// External City Name Elements
+var cityNameEl = document.getElementById("city-name");
 // External Date elements
 var dateDisplayEl = document.getElementById("current-date");
 var todayDateEl = document.getElementById("today");
@@ -31,6 +33,9 @@ var todayTemp;
 var todayWind;
 var todayHumidity;
 var todayWeatherConditions;
+
+// City Variables
+var city;
 
 /******************************************/
 /* Function and class declarations */
@@ -64,7 +69,7 @@ function cardDateDisplay(Event) {
   console.log(day5);
 
   //   Display these dates on the document
-  todayDateEl.textContent = today;
+  todayDateEl.textContent = "(" + today + ")";
   day1DateEl.textContent = day1;
   day2DateEl.textContent = day2;
   day3DateEl.textContent = day3;
@@ -74,7 +79,7 @@ function cardDateDisplay(Event) {
 
 // function to city Latitude & Longitude
 function getLatLon() {
-  var city = searchBarEl.value;
+  city = searchBarEl.value;
   var apiKey = "049be9d108315522a49e73bb36ea79dc";
   var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
@@ -128,6 +133,7 @@ function displayWeatherData() {
   todayWindEl.textContent = todayWind;
   todayHumidityEl.textContent = todayHumidity;
   todayWeatherConditionsEl.textContent = todayWeatherConditions;
+  cityNameEl.textContent = city;
 }
 /******************************************/
 /* Event listeners */
