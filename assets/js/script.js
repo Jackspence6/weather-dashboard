@@ -129,9 +129,9 @@ function getWeatherData() {
 
 // function to display weather data to document
 function displayWeatherData() {
-  todayTempEl.textContent = todayTemp;
-  todayWindEl.textContent = todayWind;
-  todayHumidityEl.textContent = todayHumidity;
+  todayTempEl.textContent = todayTemp + " °C";
+  todayWindEl.textContent = todayWind + " km/h";
+  todayHumidityEl.textContent = todayHumidity + " %";
   todayWeatherConditionsEl.textContent = todayWeatherConditions;
   cityNameEl.textContent = city;
 }
