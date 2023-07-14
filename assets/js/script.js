@@ -1,6 +1,7 @@
 /******************************************/
 /* External dependencies */
 /******************************************/
+// External Date elements
 var dateDisplayEl = document.getElementById("current-date");
 var todayDateEl = document.getElementById("today");
 var day1DateEl = document.getElementById("day1");
@@ -8,8 +9,14 @@ var day2DateEl = document.getElementById("day2");
 var day3DateEl = document.getElementById("day3");
 var day4DateEl = document.getElementById("day4");
 var day5DateEl = document.getElementById("day5");
+// External search elements
 var searchBarEl = document.getElementById("search-bar");
 var searchBtnEl = document.getElementById("search-btn");
+// External weather elements for today
+var todayTempEl = document.getElementById("today-temp");
+var todayWindEl = document.getElementById("today-wind");
+var todayHumidityEl = document.getElementById("today-humidity");
+// var todayUvIndexEl = document.getElementById("today-uvindex");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -21,7 +28,7 @@ var longitude;
 var todayTemp;
 var todayWind;
 var todayHumidity;
-var todayUvIndex;
+// var todayUvIndex;
 
 /******************************************/
 /* Function and class declarations */
@@ -98,9 +105,26 @@ function getWeatherData() {
 
     .then(function (data) {
       console.log(data);
+      todayTemp = data.main.temp;
+      console.log(todayTemp);
+      todayWind = data.wind.speed;
+      console.log(todayWind);
+      todayHumidity = data.main.humidity;
+      console.log(todayHumidity);
+      //   todayUvIndex = data.main.temp;
+      //   console.log(todayUvIndex);
+      //   Calling the displayWeatherData function to add the data to the document
+      displayWeatherData();
     });
 }
 
+// function to display weather data to document
+function displayWeatherData() {
+  todayTempEl.textContent = todayTemp;
+  todayWindEl.textContent = todayWind;
+  todayHumidityEl.textContent = todayHumidity;
+  //    todayUvIndexEl.textContent =
+}
 /******************************************/
 /* Event listeners */
 /******************************************/
