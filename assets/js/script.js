@@ -16,7 +16,9 @@ var searchBtnEl = document.getElementById("search-btn");
 var todayTempEl = document.getElementById("today-temp");
 var todayWindEl = document.getElementById("today-wind");
 var todayHumidityEl = document.getElementById("today-humidity");
-// var todayUvIndexEl = document.getElementById("today-uvindex");
+var todayWeatherConditionsEl = document.getElementById(
+  "today-weatherconditions"
+);
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -28,7 +30,7 @@ var longitude;
 var todayTemp;
 var todayWind;
 var todayHumidity;
-// var todayUvIndex;
+var todayWeatherConditions;
 
 /******************************************/
 /* Function and class declarations */
@@ -111,8 +113,9 @@ function getWeatherData() {
       console.log(todayWind);
       todayHumidity = data.main.humidity;
       console.log(todayHumidity);
-      //   todayUvIndex = data.main.temp;
-      //   console.log(todayUvIndex);
+      todayWeatherConditions = data.weather[0].main;
+      console.log(todayWeatherConditions);
+
       //   Calling the displayWeatherData function to add the data to the document
       displayWeatherData();
     });
@@ -123,7 +126,7 @@ function displayWeatherData() {
   todayTempEl.textContent = todayTemp;
   todayWindEl.textContent = todayWind;
   todayHumidityEl.textContent = todayHumidity;
-  //    todayUvIndexEl.textContent =
+  todayWeatherConditionsEl.textContent = todayWeatherConditions;
 }
 /******************************************/
 /* Event listeners */
