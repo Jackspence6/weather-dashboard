@@ -195,6 +195,7 @@ function getForecastApi() {
         filteredArray = extractElementsContainingText(forecast, searchText);
         console.log(filteredArray);
       }
+      forecastDisplay();
     });
 }
 
@@ -213,6 +214,25 @@ function extractElementsContainingText(array, searchText) {
   });
 
   return filteredArray;
+}
+
+// Function to extract and display forecast weather to document
+function forecastDisplay() {
+  console.log(filteredArray);
+  // Extract specific weather data for day 1
+  var day1Temp = filteredArray[0].main.temp;
+  console.log(day1Temp);
+  var day1Wind = filteredArray[0].wind.speed;
+  console.log(day1Wind);
+  var day1Humidity = filteredArray[0].main.humidity;
+  console.log(day1Humidity);
+  var day1WeatherConditions = filteredArray[0].weather[0].main;
+  console.log(day1WeatherConditions);
+  // Display specific weather data for day 1
+  day1TempEl.textContent = day1Temp + " °C";
+  day1WindEl.textContent = day1Wind + " km/h";
+  day1HumidityEl.textContent = day1Humidity + " %";
+  day1WeatherConditionsEl.textContent = day1WeatherConditions;
 }
 
 /******************************************/
