@@ -322,6 +322,7 @@ function forecastDisplay() {
   day5IconEl.src = day5IconUrl;
 }
 
+// Function to store searched cities to local storage and list on document
 function storeCity() {
   localStorage.setItem("city", city);
   var cities = [];
