@@ -59,20 +59,20 @@ function cardDateDisplay(Event) {
   // Todays date
   var today = moment().format("Do MMMM YYYY");
   console.log(today);
-  // Tomorrow's date
-  var day1 = moment().add(1, "days").format("Do MMMM YYYY");
+  // Day1 date
+  var day1 = moment().format("Do MMMM YYYY");
   console.log(day1);
-  // One day after tomorrows date
-  var day2 = moment().add(2, "days").format("Do MMMM YYYY");
+  // Day2 date
+  var day2 = moment().add(1, "days").format("Do MMMM YYYY");
   console.log(day2);
-  // Two days after tomorrows date
-  var day3 = moment().add(3, "days").format("Do MMMM YYYY");
+  // Day3 date
+  var day3 = moment().add(2, "days").format("Do MMMM YYYY");
   console.log(day3);
-  // Three days after tomorrows date
-  var day4 = moment().add(4, "days").format("Do MMMM YYYY");
+  // Day4 date
+  var day4 = moment().add(3, "days").format("Do MMMM YYYY");
   console.log(day4);
-  // Four days after tomorrows date
-  var day5 = moment().add(5, "days").format("Do MMMM YYYY");
+  // Day5 date
+  var day5 = moment().add(4, "days").format("Do MMMM YYYY");
   console.log(day5);
 
   //   Display these dates on the document
