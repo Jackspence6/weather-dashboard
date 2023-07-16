@@ -41,7 +41,8 @@ var city;
 var apiKey;
 
 // Daily Weather forecast data variables
-var DailyForecastsData;
+var forecast;
+var filteredArray;
 
 /******************************************/
 /* Function and class declarations */
@@ -101,7 +102,7 @@ function getLatLon() {
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
 
-      //   Calling getWeatherData function once getLatLon function has retrieved data
+      //   Calling functions once getLatLon function has retrieved data
       getWeatherData();
       cardDateDisplay();
       resetSearchBar();
@@ -160,9 +161,33 @@ function getForecastApi() {
 
     .then(function (data) {
       console.log(data);
-      DailyForecastsData = data;
-      console.log(DailyForecastsData);
+      forecast = data.list;
+      console.log(forecast);
+      var searchText = "12:00:00";
+
+      // Loop over the data to find all data that is for "12:00:00"
+      for (let i = 0; i < forecast.length; i++) {
+        filteredArray = extractElementsContainingText(forecast, searchText);
+        console.log(filteredArray);
+      }
     });
+}
+
+// Function to extract weather data only for "12:00:00" each day
+function extractElementsContainingText(array, searchText) {
+  filteredArray = array.filter(function (element) {
+    for (var key in element) {
+      if (
+        element.hasOwnProperty(key) &&
+        String(element[key]).includes(searchText)
+      ) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  return filteredArray;
 }
 
 /******************************************/
