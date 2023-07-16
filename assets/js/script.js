@@ -233,6 +233,62 @@ function forecastDisplay() {
   day1WindEl.textContent = day1Wind + " km/h";
   day1HumidityEl.textContent = day1Humidity + " %";
   day1WeatherConditionsEl.textContent = day1WeatherConditions;
+  // Extract specific weather data for day 2
+  var day2Temp = filteredArray[1].main.temp;
+  console.log(day2Temp);
+  var day2Wind = filteredArray[1].wind.speed;
+  console.log(day2Wind);
+  var day2Humidity = filteredArray[1].main.humidity;
+  console.log(day2Humidity);
+  var day2WeatherConditions = filteredArray[1].weather[0].main;
+  console.log(day2WeatherConditions);
+  // Display specific weather data for day 2
+  day2TempEl.textContent = day2Temp + " °C";
+  day2WindEl.textContent = day2Wind + " km/h";
+  day2HumidityEl.textContent = day2Humidity + " %";
+  day2WeatherConditionsEl.textContent = day2WeatherConditions;
+  // Extract specific weather data for day 3
+  var day3Temp = filteredArray[2].main.temp;
+  console.log(day3Temp);
+  var day3Wind = filteredArray[2].wind.speed;
+  console.log(day3Wind);
+  var day3Humidity = filteredArray[2].main.humidity;
+  console.log(day3Humidity);
+  var day3WeatherConditions = filteredArray[2].weather[0].main;
+  console.log(day3WeatherConditions);
+  // Display specific weather data for day 3
+  day3TempEl.textContent = day3Temp + " °C";
+  day3WindEl.textContent = day3Wind + " km/h";
+  day3HumidityEl.textContent = day3Humidity + " %";
+  day3WeatherConditionsEl.textContent = day3WeatherConditions;
+  // Extract specific weather data for day 4
+  var day4Temp = filteredArray[3].main.temp;
+  console.log(day4Temp);
+  var day4Wind = filteredArray[3].wind.speed;
+  console.log(day4Wind);
+  var day4Humidity = filteredArray[3].main.humidity;
+  console.log(day4Humidity);
+  var day4WeatherConditions = filteredArray[3].weather[0].main;
+  console.log(day4WeatherConditions);
+  // Display specific weather data for day 4
+  day4TempEl.textContent = day4Temp + " °C";
+  day4WindEl.textContent = day4Wind + " km/h";
+  day4HumidityEl.textContent = day4Humidity + " %";
+  day4WeatherConditionsEl.textContent = day4WeatherConditions;
+  // Extract specific weather data for day 5
+  var day5Temp = filteredArray[4].main.temp;
+  console.log(day5Temp);
+  var day5Wind = filteredArray[4].wind.speed;
+  console.log(day5Wind);
+  var day5Humidity = filteredArray[4].main.humidity;
+  console.log(day5Humidity);
+  var day5WeatherConditions = filteredArray[4].weather[0].main;
+  console.log(day5WeatherConditions);
+  // Display specific weather data for day 5
+  day5TempEl.textContent = day5Temp + " °C";
+  day5WindEl.textContent = day5Wind + " km/h";
+  day5HumidityEl.textContent = day5Humidity + " %";
+  day5WeatherConditionsEl.textContent = day5WeatherConditions;
 }
 
 /******************************************/
