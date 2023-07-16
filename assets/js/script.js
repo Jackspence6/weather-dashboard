@@ -15,6 +15,7 @@ var day5DateEl = document.getElementById("day5");
 var searchBarEl = document.getElementById("search-bar");
 var searchBtnEl = document.getElementById("search-btn");
 // External weather elements for today
+var todayIconEl = document.getElementById("today-icon");
 var todayTempEl = document.getElementById("today-temp");
 var todayWindEl = document.getElementById("today-wind");
 var todayHumidityEl = document.getElementById("today-humidity");
@@ -46,6 +47,12 @@ var day5TempEl = document.getElementById("day5-temp");
 var day5WindEl = document.getElementById("day5-wind");
 var day5HumidityEl = document.getElementById("day5-humidity");
 var day5WeatherConditionsEl = document.getElementById("day5-weatherconditions");
+// External icon variables
+var day1IconEl = document.getElementById("day1-icon");
+var day2IconEl = document.getElementById("day2-icon");
+var day3IconEl = document.getElementById("day3-icon");
+var day4IconEl = document.getElementById("day4-icon");
+var day5IconEl = document.getElementById("day5-icon");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -58,6 +65,7 @@ var todayTemp;
 var todayWind;
 var todayHumidity;
 var todayWeatherConditions;
+var day1IconUrl;
 
 // City Variables
 var city;
@@ -233,6 +241,10 @@ function forecastDisplay() {
   day1WindEl.textContent = day1Wind + " km/h";
   day1HumidityEl.textContent = day1Humidity + " %";
   day1WeatherConditionsEl.textContent = day1WeatherConditions;
+  // Extract and Display weather icon for day 1
+  var day1IconCode = filteredArray[0].weather[0].icon;
+  day1IconUrl = `https://openweathermap.org/img/w/${day1IconCode}.png`;
+  day1IconEl.src = day1IconUrl;
   // Extract specific weather data for day 2
   var day2Temp = filteredArray[1].main.temp;
   console.log(day2Temp);
@@ -247,6 +259,10 @@ function forecastDisplay() {
   day2WindEl.textContent = day2Wind + " km/h";
   day2HumidityEl.textContent = day2Humidity + " %";
   day2WeatherConditionsEl.textContent = day2WeatherConditions;
+  // Extract and Display weather icon for day 2
+  var day2IconCode = filteredArray[1].weather[0].icon;
+  var day2IconUrl = `https://openweathermap.org/img/w/${day2IconCode}.png`;
+  day2IconEl.src = day2IconUrl;
   // Extract specific weather data for day 3
   var day3Temp = filteredArray[2].main.temp;
   console.log(day3Temp);
@@ -261,6 +277,10 @@ function forecastDisplay() {
   day3WindEl.textContent = day3Wind + " km/h";
   day3HumidityEl.textContent = day3Humidity + " %";
   day3WeatherConditionsEl.textContent = day3WeatherConditions;
+  // Extract and Display weather icon for day 3
+  var day3IconCode = filteredArray[2].weather[0].icon;
+  var day3IconUrl = `https://openweathermap.org/img/w/${day3IconCode}.png`;
+  day3IconEl.src = day3IconUrl;
   // Extract specific weather data for day 4
   var day4Temp = filteredArray[3].main.temp;
   console.log(day4Temp);
@@ -275,6 +295,10 @@ function forecastDisplay() {
   day4WindEl.textContent = day4Wind + " km/h";
   day4HumidityEl.textContent = day4Humidity + " %";
   day4WeatherConditionsEl.textContent = day4WeatherConditions;
+  // Extract and Display weather icon for day 4
+  var day4IconCode = filteredArray[3].weather[0].icon;
+  var day4IconUrl = `https://openweathermap.org/img/w/${day4IconCode}.png`;
+  day4IconEl.src = day4IconUrl;
   // Extract specific weather data for day 5
   var day5Temp = filteredArray[4].main.temp;
   console.log(day5Temp);
@@ -289,6 +313,10 @@ function forecastDisplay() {
   day5WindEl.textContent = day5Wind + " km/h";
   day5HumidityEl.textContent = day5Humidity + " %";
   day5WeatherConditionsEl.textContent = day5WeatherConditions;
+  // Extract and Display weather icon for day 5
+  var day5IconCode = filteredArray[4].weather[0].icon;
+  var day5IconUrl = `https://openweathermap.org/img/w/${day5IconCode}.png`;
+  day5IconEl.src = day5IconUrl;
 }
 
 /******************************************/
