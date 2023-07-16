@@ -40,6 +40,9 @@ var city;
 // Api Key Variable
 var apiKey;
 
+// Daily Weather forecast data variables
+var DailyForecastsData;
+
 /******************************************/
 /* Function and class declarations */
 /******************************************/
@@ -157,6 +160,8 @@ function getForecastApi() {
 
     .then(function (data) {
       console.log(data);
+      DailyForecastsData = data;
+      console.log(DailyForecastsData);
     });
 }
 
