@@ -336,10 +336,26 @@ function storeCity() {
   cityStorageEl.appendChild(cityEl);
 }
 
+// Function to generate the city history list on page load
+function generateCityList() {
+  // Get the cities array from local storage
+  var cities = JSON.parse(localStorage.getItem("cities")) || [];
+
+  // Iterate over the cities array and create list items for each city
+  cities.forEach(function (city) {
+    const cityEl = document.createElement("li");
+    cityEl.textContent = city;
+    cityStorageEl.appendChild(cityEl);
+  });
+}
+
 /******************************************/
 /* Event listeners */
 /******************************************/
 searchBtnEl.addEventListener("click", getLatLon);
+
+// Call generateCityList on page load
+window.addEventListener("load", generateCityList);
 /******************************************/
 /* Document manipulation */
 /******************************************/
