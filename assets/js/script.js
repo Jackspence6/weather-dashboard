@@ -356,6 +356,7 @@ function generateCityList() {
 /******************************************/
 /* Event listeners */
 /******************************************/
+// Call getLatLon when search button is clicked
 searchBtnEl.addEventListener("click", getLatLon);
 
 // Call generateCityList on page load
