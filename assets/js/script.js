@@ -177,7 +177,7 @@ function resetSearchBar() {
 
 // function to get five-day weather forecast
 function getForecastApi() {
-  var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   fetch(forecastUrl)
     .then(function (response) {
