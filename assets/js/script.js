@@ -37,6 +37,9 @@ var todayWeatherConditions;
 // City Variables
 var city;
 
+// Api Key Variable
+var apiKey;
+
 /******************************************/
 /* Function and class declarations */
 /******************************************/
@@ -99,12 +102,13 @@ function getLatLon() {
       getWeatherData();
       cardDateDisplay();
       resetSearchBar();
+      getForecastApi();
     });
 }
 
 // function to get live weather data
 function getWeatherData() {
-  var apiKey = "049be9d108315522a49e73bb36ea79dc";
+  apiKey = "049be9d108315522a49e73bb36ea79dc";
   var newRequestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   fetch(newRequestUrl)
@@ -140,6 +144,20 @@ function displayWeatherData() {
 // Function to reset the search bar
 function resetSearchBar() {
   searchBarEl.value = "";
+}
+
+// function to get five-day weather forecast
+function getForecastApi() {
+  var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+  fetch(forecastUrl)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+    });
 }
 
 /******************************************/
