@@ -324,13 +324,18 @@ function forecastDisplay() {
 
 // Function to store searched cities to local storage and list on document
 function storeCity() {
-  localStorage.setItem("city", city);
-  var cities = [];
-  cities = localStorage.getItem("city");
+  // Get the existing cities array from local storage
+  var cities = JSON.parse(localStorage.getItem("cities")) || [];
+  // Add the new city to the array
+  cities.push(city);
+  // Store the updated array back in local storage
+  localStorage.setItem("cities", JSON.stringify(cities));
   const cityEl = document.createElement("li");
   cityEl.textContent = city;
+  // Display the new city in the city history list
   cityStorageEl.appendChild(cityEl);
 }
+
 /******************************************/
 /* Event listeners */
 /******************************************/
