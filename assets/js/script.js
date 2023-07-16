@@ -21,6 +21,31 @@ var todayHumidityEl = document.getElementById("today-humidity");
 var todayWeatherConditionsEl = document.getElementById(
   "today-weatherconditions"
 );
+// External Weather elements for Day 1 forecast
+var day1TempEl = document.getElementById("day1-temp");
+var day1WindEl = document.getElementById("day1-wind");
+var day1HumidityEl = document.getElementById("day1-humidity");
+var day1WeatherConditionsEl = document.getElementById("day1-weatherconditions");
+// External Weather elements for Day 2 forecast
+var day2TempEl = document.getElementById("day2-temp");
+var day2WindEl = document.getElementById("day2-wind");
+var day2HumidityEl = document.getElementById("day2-humidity");
+var day2WeatherConditionsEl = document.getElementById("day2-weatherconditions");
+// External Weather elements for Day 3 forecast
+var day3TempEl = document.getElementById("day3-temp");
+var day3WindEl = document.getElementById("day3-wind");
+var day3HumidityEl = document.getElementById("day3-humidity");
+var day3WeatherConditionsEl = document.getElementById("day3-weatherconditions");
+// External Weather elements for Day 4 forecast
+var day4TempEl = document.getElementById("day4-temp");
+var day4WindEl = document.getElementById("day4-wind");
+var day4HumidityEl = document.getElementById("day4-humidity");
+var day4WeatherConditionsEl = document.getElementById("day4-weatherconditions");
+// External Weather elements for Day 5 forecast
+var day5TempEl = document.getElementById("day5-temp");
+var day5WindEl = document.getElementById("day5-wind");
+var day5HumidityEl = document.getElementById("day5-humidity");
+var day5WeatherConditionsEl = document.getElementById("day5-weatherconditions");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
