@@ -53,6 +53,8 @@ var day2IconEl = document.getElementById("day2-icon");
 var day3IconEl = document.getElementById("day3-icon");
 var day4IconEl = document.getElementById("day4-icon");
 var day5IconEl = document.getElementById("day5-icon");
+// Local storage variables
+var cityStorageEl = document.getElementById("city-history");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -140,6 +142,7 @@ function getLatLon() {
       cardDateDisplay();
       resetSearchBar();
       getForecastApi();
+      storeCity();
     });
 }
 
@@ -319,6 +322,14 @@ function forecastDisplay() {
   day5IconEl.src = day5IconUrl;
 }
 
+function storeCity() {
+  localStorage.setItem("city", city);
+  var cities = [];
+  cities = localStorage.getItem("city");
+  const cityEl = document.createElement("li");
+  cityEl.textContent = city;
+  cityStorageEl.appendChild(cityEl);
+}
 /******************************************/
 /* Event listeners */
 /******************************************/
