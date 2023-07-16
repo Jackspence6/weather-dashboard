@@ -345,6 +345,10 @@ function generateCityList() {
   cities.forEach(function (city) {
     const cityEl = document.createElement("li");
     cityEl.textContent = city;
+    // Capitalize the start of each word
+    cityEl.style.textTransform = "capitalize";
+    // Remove bullet points
+    cityEl.style.listStyleType = "none";
     cityStorageEl.appendChild(cityEl);
   });
 }
