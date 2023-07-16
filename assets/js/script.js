@@ -332,6 +332,11 @@ function storeCity() {
   localStorage.setItem("cities", JSON.stringify(cities));
   const cityEl = document.createElement("li");
   cityEl.textContent = city;
+  cityEl.textContent = city;
+  // Capitalize the start of each word
+  cityEl.style.textTransform = "capitalize";
+  // Remove bullet points
+  cityEl.style.listStyleType = "none";
   // Display the new city in the city history list
   cityStorageEl.appendChild(cityEl);
 }
