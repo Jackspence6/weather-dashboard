@@ -11,7 +11,7 @@
 /******************************************/
 header {
   display: grid;
-  background-image: url("/assets/images/header-background.jpg");
+  background-image: url("/assets/images/header-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 10rem;
