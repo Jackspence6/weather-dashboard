@@ -3,6 +3,7 @@
 /******************************************/
 // External City Name Elements
 var cityNameEl = document.getElementById("city-name");
+var cityHistEl = document.querySelector(".cityHistBtn");
 // External Date elements
 var dateDisplayEl = document.getElementById("current-date");
 var todayDateEl = document.getElementById("today");
@@ -71,6 +72,8 @@ var day1IconUrl;
 
 // City Variables
 var city;
+var cityEl;
+var clickedCity;
 
 // Api Key Variable
 var apiKey;
@@ -137,6 +140,9 @@ function getLatLon() {
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
 
+      // Update the city name in the first card
+      cityNameEl.textContent = city;
+
       //   Calling functions once getLatLon function has retrieved data
       getWeatherData();
       cardDateDisplay();
@@ -147,7 +153,7 @@ function getLatLon() {
 }
 
 // function to get live weather data
-function getWeatherData() {
+function getWeatherData(clickedCity) {
   apiKey = "049be9d108315522a49e73bb36ea79dc";
   var newRequestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
@@ -178,7 +184,6 @@ function displayWeatherData() {
   todayWindEl.textContent = todayWind + " km/h";
   todayHumidityEl.textContent = todayHumidity + " %";
   todayWeatherConditionsEl.textContent = todayWeatherConditions;
-  cityNameEl.textContent = city;
 }
 
 // Function to reset the search bar
@@ -337,6 +342,8 @@ function storeCity() {
   cityEl.style.textTransform = "capitalize";
   // Remove bullet points
   cityEl.style.listStyleType = "none";
+  // Add class to new element
+  cityEl.classList.add("cityHistBtn");
   // Display the new city in the city history list
   cityStorageEl.appendChild(cityEl);
 }
@@ -348,7 +355,7 @@ function generateCityList() {
 
   // Iterate over the cities array and create list items for each city
   cities.forEach(function (city) {
-    const cityEl = document.createElement("li");
+    cityEl = document.createElement("li");
     cityEl.textContent = city;
     // Capitalize the start of each word
     cityEl.style.textTransform = "capitalize";
@@ -356,6 +363,34 @@ function generateCityList() {
     cityEl.style.listStyleType = "none";
     cityStorageEl.appendChild(cityEl);
   });
+}
+
+// Function to retrieve latitude and longitude from saved history
+function getLatLonHist(event) {
+  clickedCity = event.target.textContent;
+  var apiKey = "049be9d108315522a49e73bb36ea79dc";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${clickedCity}&appid=${apiKey}`;
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      latitude = data[0].lat;
+      longitude = data[0].lon;
+      console.log("Latitude:", latitude);
+      console.log("Longitude:", longitude);
+
+      // Call functions to fetch and display weather data
+      getWeatherData(clickedCity);
+      cardDateDisplay();
+      resetSearchBar();
+      getForecastApi();
+
+      // Update the city name in the first card
+      cityNameEl.textContent = clickedCity;
+    });
 }
 
 /******************************************/
@@ -366,6 +401,10 @@ searchBtnEl.addEventListener("click", getLatLon);
 
 // Call generateCityList on page load
 window.addEventListener("load", generateCityList);
+
+// Call getLatLonHist when previous search is clicked on
+cityStorageEl.addEventListener("click", getLatLonHist);
+
 /******************************************/
 /* Document manipulation */
 /******************************************/
