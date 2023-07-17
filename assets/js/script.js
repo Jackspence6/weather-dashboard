@@ -142,6 +142,8 @@ function getLatLon() {
 
       // Update the city name in the first card
       cityNameEl.textContent = city;
+      // Capitalize the start of the City Name
+      cityNameEl.style.textTransform = "capitalize";
 
       //   Calling functions once getLatLon function has retrieved data
       getWeatherData();
