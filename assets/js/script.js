@@ -336,16 +336,20 @@ function storeCity() {
   // Store the updated array back in local storage
   localStorage.setItem("cities", JSON.stringify(cities));
   const cityEl = document.createElement("li");
-  cityEl.textContent = city;
-  cityEl.textContent = city;
+  const cityLink = document.createElement("a");
+  cityLink.textContent = city;
+  cityLink.href = "#";
+  // Adding the class name for styling
+  cityLink.classList.add("city-button");
+  cityEl.appendChild(cityLink);
+  // Appending the <li> to the <ul> element
+  cityStorageEl.appendChild(cityEl);
   // Capitalize the start of each word
   cityEl.style.textTransform = "capitalize";
   // Remove bullet points
   cityEl.style.listStyleType = "none";
   // Add class to new element
   cityEl.classList.add("cityHistBtn");
-  // Display the new city in the city history list
-  cityStorageEl.appendChild(cityEl);
 }
 
 // Function to generate the city history list on page load
@@ -355,13 +359,19 @@ function generateCityList() {
 
   // Iterate over the cities array and create list items for each city
   cities.forEach(function (city) {
-    cityEl = document.createElement("li");
-    cityEl.textContent = city;
+    const cityEl = document.createElement("li");
+    const cityLink = document.createElement("a");
+    cityLink.textContent = city;
+    cityLink.href = "#";
+    // Adding class name for styling
+    cityLink.classList.add("city-button");
+    cityEl.appendChild(cityLink);
+    // Appending the <li> to the <ul> element
+    cityStorageEl.appendChild(cityEl);
     // Capitalize the start of each word
     cityEl.style.textTransform = "capitalize";
     // Remove bullet points
     cityEl.style.listStyleType = "none";
-    cityStorageEl.appendChild(cityEl);
   });
 }
 
