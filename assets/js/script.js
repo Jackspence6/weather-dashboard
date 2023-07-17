@@ -126,7 +126,7 @@ function cardDateDisplay(Event) {
 function getLatLon() {
   city = searchBarEl.value;
   var apiKey = "049be9d108315522a49e73bb36ea79dc";
-  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+  var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
   fetch(requestUrl)
     .then(function (response) {
@@ -381,7 +381,7 @@ function generateCityList() {
 function getLatLonHist(event) {
   clickedCity = event.target.textContent;
   var apiKey = "049be9d108315522a49e73bb36ea79dc";
-  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${clickedCity}&appid=${apiKey}`;
+  var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${clickedCity}&appid=${apiKey}`;
 
   fetch(requestUrl)
     .then(function (response) {
