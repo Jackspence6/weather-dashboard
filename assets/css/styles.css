@@ -23,10 +23,32 @@ header {
   margin-bottom: 1rem;
 }
 
+h1 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
 h2 {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
+  font-family: "Tektur", cursive;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+h3 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+h4 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 200;
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 /******************************************/
 /* Class Selectors */
