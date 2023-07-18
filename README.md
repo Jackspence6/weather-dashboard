@@ -1,6 +1,10 @@
 # weather-dashboard
 Weather Dashboard: Retrieve and display current/future weather conditions for cities using OpenWeather API. Features dynamic updates, city search, UV index, 5-day forecast and is ideal for traveler's to plan trips.
 
+# Installation:
+There are no installation requirements except to open the single `index.html` page or visit the page: 
+https://jackspence6.github.io/weather-dashboard/
+
 # Server-Side APIs: Weather Dashboard
 
 ## Your Task
