@@ -11,9 +11,7 @@
 /******************************************/
 header {
   display: grid;
-  background-image: url("/assets/images/header-background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #87ceeb;
   height: 10rem;
   text-align: center;
   align-items: center;
