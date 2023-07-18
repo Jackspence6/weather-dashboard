@@ -417,7 +417,7 @@ function handleSearch() {
 // Added event listeners to trigger the search on click and enter keypress
 searchBtnEl.addEventListener("click", handleSearch);
 searchBarEl.addEventListener("keydown", function (event) {
-  if (event.keyCode === 13) {
+  if (event.key === "Enter") {
     event.preventDefault();
     handleSearch();
   }
