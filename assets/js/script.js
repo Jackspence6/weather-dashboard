@@ -405,11 +405,23 @@ function getLatLonHist(event) {
     });
 }
 
+// Function to handle the search event
+function handleSearch() {
+  // Call the getLatLon function to perform the search
+  getLatLon();
+}
+
 /******************************************/
 /* Event listeners */
 /******************************************/
-// Call getLatLon when search button is clicked
-searchBtnEl.addEventListener("click", getLatLon);
+// Added event listeners to trigger the search on click and enter keypress
+searchBtnEl.addEventListener("click", handleSearch);
+searchBarEl.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    handleSearch();
+  }
+});
 
 // Call generateCityList on page load
 window.addEventListener("load", generateCityList);
